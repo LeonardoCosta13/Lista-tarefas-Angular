@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
+// Interface
+import { TaskListe } from '../../model/task-liste';
+
 @Component({
   selector: 'app-todo-list',
   templateUrl: './todo-list.component.html',
@@ -7,6 +10,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TodoListComponent implements OnInit {
 
+  public taskList: Array<TaskListe> = [
+    {task:  'Minha nova Task', checked: true },
+    {task:  'Minha nova Task2', checked: false },
+
+  ]
   constructor() { }
 
   ngOnInit(): void {
