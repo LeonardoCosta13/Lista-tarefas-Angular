@@ -4,12 +4,12 @@
             <input type="checkbox" [(ngModel)]="item.checked">
             <input type="text" [(ngModel)]="item.task">
 
-            <button>
+            <button (click)="deleteItemTaskList(i)">
                 <img src="assets/icons/icon-trash.svg" alt="">
             </button>
 
     </ul>
 </section>
 
-<app-todo-inpu-add-itens></app-todo-inpu-add-itens>
-<app-todo-button-dellete-all *ngIf="taskList.length"></app-todo-button-dellete-all>
+<app-todo-inpu-add-itens (emitItemTaskList)="setEmiteTaskList($event)"></app-todo-inpu-add-itens>
+<app-todo-button-dellete-all *ngIf="taskList.length" (click)="deleteAllTaskList()"></app-todo-button-dellete-all>
